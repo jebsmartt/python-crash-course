@@ -13,7 +13,11 @@ def send_messages(list):
         print(message)
         sent_messages.append(message)
 
-send_messages(txt_msgs)
+# send_messages(txt_msgs)
+send_messages(txt_msgs[:])
 print(txt_msgs)
 print(sent_messages)
+
+
+
         
