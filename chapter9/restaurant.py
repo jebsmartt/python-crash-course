@@ -15,4 +15,11 @@ class restaurant:
 restaurant1 = restaurant("Luigi's",'Italian')
 
 restaurant.describe_restaurant(restaurant1)
-restaurant.open_restaurant(restaurant1)
+
+restaurant2 = restaurant("Paulies",'Pasta')
+
+restaurant.describe_restaurant(restaurant2)
+
+restaurant3 = restaurant("Chiloso",'Mexican')
+
+restaurant.describe_restaurant(restaurant3)
