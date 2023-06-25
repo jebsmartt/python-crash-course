@@ -1,4 +1,4 @@
-class restaurant:
+class Restaurant:
     """this is called a docstring"""
 
     def __init__(self, restaurant_name, cuisine_type) -> None:
@@ -12,14 +12,14 @@ class restaurant:
     def open_restaurant(self):
         print(f"The {self.restaurant_name} restaurant is open.")
 
-restaurant1 = restaurant("Luigi's",'Italian')
+restaurant1 = Restaurant("Luigi's",'Italian')
 
-restaurant.describe_restaurant(restaurant1)
+Restaurant.describe_restaurant(restaurant1)
 
-restaurant2 = restaurant("Paulies",'Pasta')
+restaurant2 = Restaurant("Paulies",'Pasta')
 
-restaurant.describe_restaurant(restaurant2)
+Restaurant.describe_restaurant(restaurant2)
 
-restaurant3 = restaurant("Chiloso",'Mexican')
+restaurant3 = Restaurant("Chiloso",'Mexican')
 
-restaurant.describe_restaurant(restaurant3)
+Restaurant.describe_restaurant(restaurant3)
