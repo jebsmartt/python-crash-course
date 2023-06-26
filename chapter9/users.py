@@ -23,12 +23,22 @@ class Admin(User):
 
     def __init__(self, first_name, last_name, birthday, city):
         super().__init__(first_name, last_name, birthday, city)
-        self.privileges = []
+        self.privileges = Privileges()
+
+    
+    
+class Privileges:
+    """The class should have one attribute, privileges, that 
+    stores a list of strings as described in Exercise 9-7."""
+
+    def __init__(self,privileges=[]):
+        self.privileges = privileges
 
     def show_privileges(self):
-        print(f"\nThese are the admin user privileges for {self.first_name} {self.last_name}:")
+        # print(f"\nThese are the admin user privileges for {self.first_name} {self.last_name}:")
         for p in self.privileges:
             print(f"- {p}")
+
 
 
 user1 = Admin('Jeb','Smartt','10/24/1992','Renton')
@@ -45,6 +55,6 @@ user3 = User('Benton','Smartt','1/7/2021','Houston')
 # user1.reset_login_attempts()
 # print(user1.login_attempts)
 
-user1.privileges = ["can add post", "can delete post", "can ban user"]
+user1.privileges.privileges = ["can add post", "can delete post", "can ban user"]
 
-user1.show_privileges()
+user1.privileges.show_privileges()
