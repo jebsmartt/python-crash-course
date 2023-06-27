@@ -60,7 +60,7 @@ class MyTicket:
         while self.winner == False:
             game_counter += 1
             if sorted(self.my_numbers) == sorted(winning_numbers.winning_sequence):
-                print("You Won!")
+                print("\nYou Won!")
                 self.winner = True
             winning_numbers.winning_sequence = []
             winning_numbers.create_winning_sequence()
