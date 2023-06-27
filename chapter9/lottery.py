@@ -28,9 +28,6 @@ class LottoTicket:
             self.winning_sequence.append(selection)
             combined_bank.remove(selection)
 
-            # self.winning_sequence.append(combined_bank.pop(
-            #     randint(0,len(combined_bank)))
-            # )
 
     def announce_winner(self):
         message = "Any ticket matching these 4 numbers or letters wins a prize: "
@@ -45,22 +42,41 @@ class MyTicket:
         self.char3 = str(char3)
         self.char4 = str(char4)
         self.my_numbers = [str(char1),str(char2),str(char3),str(char4)]
+        self.winner = False
 
     def did_i_win(self,winning_numbers):
         print(f"\nHere are your numbers {self.my_numbers}")
         if sorted(self.my_numbers) == sorted(winning_numbers):
             print("You Won!")
+            self.winner = True
         else:
             print("You did't win")
 
-Lotto1 = LottoTicket()
-Lotto1.create_winning_sequence()
-Lotto1.announce_winner()
+    def games_til_win(self):
+        game_counter = 0
+        winning_numbers = LottoTicket()
+        winning_numbers.create_winning_sequence()
 
-a_ticket = MyTicket('a',1,3,'e')
+        while self.winner == False:
+            game_counter += 1
+            if sorted(self.my_numbers) == sorted(winning_numbers.winning_sequence):
+                print("You Won!")
+                self.winner = True
+            winning_numbers.winning_sequence = []
+            winning_numbers.create_winning_sequence()
+            
+        print(f"We found a winner, and it only took {game_counter} trys.")
+    
+    
 
+# Lotto1 = LottoTicket()
+# Lotto1.create_winning_sequence()
+# Lotto1.announce_winner()
 
-a_ticket.did_i_win(Lotto1.winning_sequence)
+a_ticket = MyTicket('c',3,1,2)
+
+a_ticket.games_til_win()
+
 
 
         
