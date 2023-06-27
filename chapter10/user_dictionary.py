@@ -32,9 +32,14 @@ def greet_user():
     user_data = get_stored_user_data(path)
 
     if user_data:
-        print(f"Welcome back, {user_data['username']}!")
-        print(f"\tYou live in {user_data['city']}")
-        print(f"\tYour favorite color is {user_data['color']}")
+        id = input(f"Is this your username (Y/N): {user_data['username']}   ")
+        if id.upper() == 'Y':
+            print(f"Welcome back, {user_data['username']}!")
+            print(f"\tYou live in {user_data['city']}")
+            print(f"\tYour favorite color is {user_data['color']}")
+        else:
+            user_data = get_new_user_data(path)
+            print(f"We'll remember you when you come back, {user_data['username']}!")
     else:
         user_data = get_new_user_data(path)
         print(f"We'll remember you when you come back, {user_data['username']}!")
